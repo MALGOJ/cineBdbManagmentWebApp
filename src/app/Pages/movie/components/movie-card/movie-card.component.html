@@ -1,0 +1,8 @@
+<div class="card bg-dark text-white" *ngIf="movie">
+  <img [src]="'assets/' + movie.posterFilenameDto" class="card-img-top poster-image" alt="Movie Poster">
+  <div class="card-body">
+    <h5 class="card-title">{{ movie.titleDto }}</h5>
+    <p class="card-text">{{ movie.genderDto }}</p>
+    <button class="btn btn-custom">Reservar</button>
+  </div>
+</div>

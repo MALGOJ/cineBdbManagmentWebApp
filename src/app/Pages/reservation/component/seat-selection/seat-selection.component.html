@@ -1,0 +1,20 @@
+<!-- Opcional: Indicador visual del frente o pantalla -->
+<div class="text-center my-3">
+  <div class="bg-secondary text-white py-2 px-4 rounded">Pantalla</div>
+</div>
+
+<!-- Mostrar los asientos agrupados por fila -->
+<div *ngFor="let row of seatRows" class="seat-row d-flex gap-2 mb-2 flex-wrap align-items-center">
+  <strong class="me-2">{{ row }}</strong>
+  <button
+    *ngFor="let seat of groupedSeats[row]"
+    class="btn"
+    [ngClass]="{
+      'btn-primary': selectedSeats.includes(seat),
+      'btn-outline-secondary': !selectedSeats.includes(seat)
+    }"
+    (click)="toggleSeat(seat)"
+  >
+    {{ seat }}
+  </button>
+</div>

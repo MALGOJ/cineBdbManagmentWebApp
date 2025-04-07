@@ -1,0 +1,77 @@
+<app-navbar></app-navbar>
+<div class="container mt-4">
+  <h2 class="mb-4">Registrar Nueva Película</h2>
+
+  <form (ngSubmit)="onSubmit()" #movieForm="ngForm">
+    <div class="mb-3">
+      <label for="title" class="form-label">Título</label>
+      <input
+        type="text"
+        id="title"
+        class="form-control"
+        name="titleDto"
+        required
+        [(ngModel)]="movie.titleDto"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="gender" class="form-label">Género</label>
+      <input
+        type="text"
+        id="gender"
+        class="form-control"
+        name="genderDto"
+        required
+        [(ngModel)]="movie.genderDto"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="duration" class="form-label">Duración (minutos)</label>
+      <input
+        type="number"
+        id="duration"
+        class="form-control"
+        name="durationMinutesDto"
+        required
+        [(ngModel)]="movie.durationMinutesDto"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="rating" class="form-label">Clasificación</label>
+      <input
+        type="text"
+        id="rating"
+        class="form-control"
+        name="ratingDto"
+        required
+        [(ngModel)]="movie.ratingDto"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="poster" class="form-label">Nombre del archivo del póster</label>
+      <input
+        type="text"
+        id="poster"
+        class="form-control"
+        name="posterFilenameDto"
+        [(ngModel)]="movie.posterFilenameDto"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="movieForm.invalid">
+      Registrar Película
+    </button>
+  </form>
+
+  <div *ngIf="successMessage" class="alert alert-success mt-3">
+    {{ successMessage }}
+  </div>
+
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+    {{ errorMessage }}
+  </div>
+</div>

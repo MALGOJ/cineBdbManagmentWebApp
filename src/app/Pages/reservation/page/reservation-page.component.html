@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+
+<div class="container my-5">
+  <div class="row">
+    <!-- Formulario de reserva -->
+    <div class="col-md-6">
+      <app-reservation-form></app-reservation-form>
+    </div>
+
+    <!-- Componente de selección de asientos -->
+    <div class="col-md-6">
+      <h4 class="mb-3">Selecciona tus asientos</h4>
+      <app-seat-selection
+        [roomId]="1"
+        [schedule]="'2025-04-07T20:00'">
+      </app-seat-selection>
+    </div>
+  </div>
+
+  <!-- Lista de reservas debajo -->
+  <div class="mt-5">
+    <h4 class="mb-3">Reservas actuales</h4>
+    <app-reservation-list></app-reservation-list>
+  </div>
+</div>
