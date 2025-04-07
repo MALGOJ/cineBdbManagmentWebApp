@@ -1,0 +1,17 @@
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Lista de Salas</h2>
+  <table class="table table-bordered table-hover text-center">
+    <thead class="table-dark">
+    <tr>
+      <th>Nombre</th>
+      <th>Capacidad</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let room of rooms">
+      <td>{{ room.nameDto }}</td>
+      <td>{{ room.capacityDto }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
